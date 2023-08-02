@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CriptocurrencyManagerService } from '../../services/criptocurrency-manager.service';
 import { AssetsModel } from 'src/app/store/assets/assets.model';
 import { Store } from '@ngrx/store';
-import { LOAD_ASSETS, loadAssets } from 'src/app/store/assets/assets.actions';
-import { Observable } from 'rxjs';
+import { LOAD_ASSETS } from 'src/app/store/assets/assets.actions';
 import { LIST_FAVOURITES_INFO_KEY, LIST_FAVOURITES_KEY } from 'src/app/store/shared/const/storage-const';
 
 @Component({
@@ -20,15 +18,8 @@ export class ListCryptocurrenciesComponent implements OnInit {
   searchText = '';
   characters: any;
 
-  get showLoading() {
-    if(this.assetsList.length > 0){
-      console.log('false')
-      return false;
-    } else{
-      console.log('true')
-      return true;
-    }
-  }
+  showLoading = true;
+
   constructor(private store: Store<AssetsModel>) { }
 
   ngOnInit() {
@@ -41,6 +32,9 @@ export class ListCryptocurrenciesComponent implements OnInit {
     this.store.select(state => state)
       .subscribe((data: any) => {
         this.assetsList = data.assets_shared.assetsList;
+        if(this.assetsList){
+          this.showLoading = false;
+        }
       }
       );
   }
@@ -60,9 +54,7 @@ export class ListCryptocurrenciesComponent implements OnInit {
       this.assetsFavourite = this.assetsFavourite.filter((item: any, index: any) => {
         return this.assetsFavourite.indexOf(item) === index;
       });
-
-      console.log('lo que se envia')
-      console.log(this.assetsFavouriteData)
+      
       localStorage.setItem(LIST_FAVOURITES_KEY, JSON.stringify(this.assetsFavourite));
       localStorage.setItem(LIST_FAVOURITES_INFO_KEY, JSON.stringify(this.assetsFavouriteData));
     }

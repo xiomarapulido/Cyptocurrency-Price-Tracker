@@ -12,7 +12,7 @@ export class CriptocurrencyManagerService {
   constructor(private readonly http: HttpClient) { }
 
   getAllCriptocurrency():Observable<AssetsModel[]> {
-    const headers = new HttpHeaders({ 'X-CoinAPI-Key': 'FC189672-2E7F-4711-A805-3DBEDE600D1C' });
+    const headers = new HttpHeaders({ 'X-CoinAPI-Key': '79FBCE73-6AF5-475A-AEBA-0FB4AB6610A4' });
     const requestOptions = { headers: headers };
     return this.http.get<AssetsModel[]>(`https://rest.coinapi.io/v1/assets`, requestOptions);
   }
