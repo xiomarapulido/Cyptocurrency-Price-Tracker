@@ -1,1 +1,26 @@
-<p>favourites-cryptocurrencies works!</p>
+<div class="wrap-favourites-home">
+    <h3 class="title">Detail of favourite cryptocurrencies</h3>
+    <table *ngIf="isFavouritesData" class="table table-data">
+        <thead>
+            <tr>
+                <th scope="col" class="item-table">#</th>
+                <th scope="col" class="item-table">Name</th>
+                <th scope="col" class="item-table">Price USD</th>
+                <th scope="col" class="item-table">Volume(1 hour) USD</th>
+                <th scope="col" class="item-table">Volume(1 day) USD</th>
+                <th scope="col" class="item-table">Volume(24 month) USD</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let asset of assetsFavouritesData; let i = index">
+                <th scope="row">{{i + 1}}</th>
+                <td class="text-info-data">{{asset.name}}</td>
+                <td class="text-info-data">{{asset?.price_usd | currency}}</td>
+                <td>{{asset.volume_1hrs_usd | currency}}</td>
+                <td>{{asset.volume_1day_usd | currency}}</td>
+                <td>{{asset.volume_1mth_usd | currency}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <span *ngIf="!isFavouritesData" class="item-table" ><i class="bi bi-info-circle item-table"></i> There are no saved favourites</span> 
+</div>

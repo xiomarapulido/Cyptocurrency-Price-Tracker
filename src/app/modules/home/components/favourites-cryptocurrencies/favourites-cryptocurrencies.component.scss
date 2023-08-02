@@ -1,0 +1,17 @@
+@import "../../../../../styles.scss";
+
+.wrap-favourites-home{
+    padding: 30px;
+    .item-table{
+        color: $color-00695c;
+    }
+
+    .table-data{
+        margin-top: 30px;
+    }
+
+    .text-info-data{
+        font-weight: bold;
+        color: $color-26a69a;
+    }
+}
