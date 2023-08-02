@@ -1,0 +1,23 @@
+<div class="content wrap-list" role="main">
+    <h3 class="title">Search cryptocurrencies <i class="bi bi-search"></i></h3>
+  
+    <div class="col-md-6 offset-md-3 col-sm-12">
+      <div class="card">
+        <div class="form-group">
+          <input type="email" class="form-control" id="search-text" aria-describedby="search-text"
+            [(ngModel)]="searchText" placeholder="Enter name of cryptocurrencie to search" autofocus>
+        </div>
+        <ul class="list-group list-group-flush content-data-list">
+  
+          <li class="list-group-item item-data-info" *ngFor="let i = index; let asset of assetsList | appFilter: searchText">
+            {{asset.name}}
+            <div class="content-icon" (click)="selectFavourite(i,asset )">
+              <i id="element{{i}}" class="bi bi-star icon"></i>
+              <label class="favourite-text"> favourite</label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <span *ngIf="showLoading" class="content-info-loading"><i class="bi bi-cloud-upload"></i> Loading the information</span> 
+  </div>

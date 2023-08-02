@@ -1,0 +1,49 @@
+@import "../../../../../styles.scss";
+
+.wrap-list {
+    padding: 30px;
+
+    .content-data-list {
+        max-height: 350px;
+        overflow-x: hidden;
+    }
+
+    .list-group-item:hover {
+        background-color: $color-b9f6ca;
+    }
+
+    .item-data-info{
+        color: $color-26a69a;
+        font-weight: bold;
+    }
+
+    .content-info-loading{
+        color: $color-004d40;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .content-icon {
+        width: 30px;
+        height: 30px;
+        float: right;
+        cursor: pointer;
+
+        .icon {
+            font-size: 20px;
+        }
+    }
+
+    .assetFavorite {
+        color: $color-ffd400;
+    }
+
+    .favourite-text {
+        color: $color-00897b;
+        position: absolute;
+        width: 500px;
+        margin-left: -35px;
+        font-size: 12px;
+        margin-top: 21px;
+    }
+}

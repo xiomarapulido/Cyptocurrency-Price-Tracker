@@ -1,0 +1,11 @@
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link"  routerLinkActive="active" aria-current="page" routerLink="/homePage/listCryptocurrencies">All Cryptocurrencies</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link"  [routerLinkActive]="['active']" routerLink="/homePage/favouritesCryptocurrencies">Favourites Cryptocurrencies</a>
+    </li>
+  </ul>
+
+  <router-outlet></router-outlet>
