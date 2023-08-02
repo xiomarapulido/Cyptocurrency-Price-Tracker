@@ -1,1 +1,13 @@
-<p>edit-favourites works!</p>
+<div class="wrap-favourites-edit">
+    <h3 class="title">Edit favourites cryptocurrencies<i class="bi bi-pencil icon-edit"></i></h3>
+    <div class="col-md-6 offset-md-3 col-sm-12">
+        <h5 *ngIf="!showData" class="icon-alert"><i class="bi bi-info-square icon-alert"></i>There are no favorite cryptocurrencies to edit</h5>
+        <div  *ngIf="showData" class="content-items-data">
+            <ul class="list-group" *ngFor="let asset of favourites; let i = index">
+                <li class="list-group-item item-list">{{asset.name}}
+                    <i class="bi bi-trash icon-trash" (click)="deleteFavourite(asset.asset_id)"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
