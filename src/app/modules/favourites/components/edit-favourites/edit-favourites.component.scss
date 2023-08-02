@@ -1,0 +1,37 @@
+@import "../../../../../styles.scss";
+
+.wrap-favourites-edit {
+    padding: 30px;
+
+    .content-items-data {
+        margin-top: 30px;
+    }
+
+    .icon-alert {
+        color: $color-ffd400;
+        margin-right: 20px;
+        margin-top: 30px;
+    }
+
+    .icon-edit {
+        margin-left: 10px;
+    }
+
+    .title-alert {
+        color: $color-ffd400;
+    }
+
+    .item-list {
+        border-color: $color-26a69a;
+    }
+    .item-list:hover {
+        background-color: $color-c8e6c9;
+    }
+
+    .icon-trash {
+        float: right;
+        font-size: 20px;
+        color: $color-ff0000;
+        cursor: pointer;
+    }
+}
