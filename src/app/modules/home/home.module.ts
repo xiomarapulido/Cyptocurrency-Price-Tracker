@@ -5,6 +5,7 @@ import { FavouritesCryptocurrenciesComponent } from './components/favourites-cry
 import { HomeRoutingModule } from './home-routing.module';
 import { LayoutComponent } from './components/layout/layout.component';
 
+
 @NgModule({
   declarations: [
     ListCryptocurrenciesComponent,
