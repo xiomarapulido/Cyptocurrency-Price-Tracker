@@ -1,0 +1,19 @@
+@import "../../../styles.scss";
+
+.itemNav {
+    padding: 0 50px 0;
+    font-weight: bold;;
+}
+
+.itemNav:hover {
+    color:$color-64ffda;
+}
+
+
+.active {
+    color: $color-64ffda;
+}
+
+.nav-content{
+    background-color: $color-00897b;
+}

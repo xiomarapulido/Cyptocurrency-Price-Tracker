@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+$color-215bfd : #215bfd;
+$color-61d8d8 : #61d8d8;
+$color-215bfd : #215bfd;
+$color-215bfd : #215bfd;
+$color-ffd400 : #ffd400;
+$color-ff0000: #ff0000;
+$color-e8f5e9: #e8f5e9;
+$color-00897b: #00897b;
+$color-80cbc4: #80cbc4;
+$color-64ffda: #64ffda;
+$color-b9f6ca: #b9f6ca;
+$color-26a69a: #26a69a;
+$color-004d40: #004d40;
+$color-00695c: #00695c;
+$color-c8e6c9: #c8e6c9;
+
+body {
+    background-color: $color-e8f5e9;
+}
+
+.title {
+    color: $color-00897b;
+    font-size: 24px;
+}
