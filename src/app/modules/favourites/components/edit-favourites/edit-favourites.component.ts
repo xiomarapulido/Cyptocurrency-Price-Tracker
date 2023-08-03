@@ -12,12 +12,12 @@ export class EditFavouritesComponent {
   favourites: any = [];
   favouritesID: any = [];
 
-  get showData(){
-    if(this.favourites.length > 0){
+  get showData() {
+    if (this.favourites.length > 0) {
       return true;
-    } else{
+    } else {
       return false;
-    } 
+    }
   }
 
   ngOnInit() {
@@ -26,25 +26,33 @@ export class EditFavouritesComponent {
 
   getInitialData() {
     if (localStorage.getItem(LIST_FAVOURITES_INFO_KEY)) {
-      this.favouritesArray = JSON.parse(String(localStorage.getItem(LIST_FAVOURITES_INFO_KEY)));
-      const cleanArray = (arr: any) => {
-        const dataMap = arr.map((element: any) => {
-          return [element.asset_id, element]
-        });
-      
-        return [...new Map(dataMap).values()];
-      }
-      this.favourites = cleanArray(this.favouritesArray);
+      this.getDataFavouritesStorage();
+    }
+    if (localStorage.getItem(LIST_FAVOURITES_KEY)) {
+      this.getfavouritesIDStorage();
     }
 
-    if (localStorage.getItem(LIST_FAVOURITES_KEY)) {
-      this.favouritesID = JSON.parse(String(localStorage.getItem(LIST_FAVOURITES_KEY))); 
-    } 
   }
 
-  deleteFavourite(idCurrency: string){
-    const index = this.favourites.findIndex((data: any)=> data.asset_id === idCurrency);
-    const indexID = this.favouritesID.findIndex((data: any)=> data === idCurrency);
+  getDataFavouritesStorage() {
+    this.favouritesArray = JSON.parse(String(localStorage.getItem(LIST_FAVOURITES_INFO_KEY)));
+    const cleanArray = (arr: any) => {
+      const dataMap = arr?.map((element: any) => {
+        return [element?.asset_id, element]
+      });
+
+      return [...new Map(dataMap).values()];
+    }
+    this.favourites = cleanArray(this.favouritesArray);
+  }
+
+  getfavouritesIDStorage() {
+    this.favouritesID = JSON.parse(String(localStorage.getItem(LIST_FAVOURITES_KEY)));
+  }
+
+  deleteFavourite(idCurrency: string) {
+    const index = this.favourites.findIndex((data: any) => data.asset_id === idCurrency);
+    const indexID = this.favouritesID.findIndex((data: any) => data === idCurrency);
     this.favourites.splice(index, 1);
     this.favouritesID.splice(indexID, 1);
 
